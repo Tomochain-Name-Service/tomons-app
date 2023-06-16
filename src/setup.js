@@ -3,7 +3,7 @@ import {
   getNetwork,
   getNetworkId,
   isReadOnly
-} from '@ensdomains/ui'
+} from '@tomochain-name-service/ui'
 import { connect } from './api/web3modal'
 import { setup } from './apollo/mutations/ens'
 import {
@@ -38,12 +38,9 @@ export const setSubDomainFavourites = () => {
 
 export const isSupportedNetwork = networkId => {
   switch (networkId) {
-    case 1:
-    case 3:
-    case 4:
-    case 5:
-    case 1337:
-    case 31337:
+    case 88:
+    case 0x58:
+    case 89:
       return true
     default:
       return false
@@ -52,6 +49,7 @@ export const isSupportedNetwork = networkId => {
 
 const handleUnsupportedNetwork = (provider = window.ethereum) => {
   if (provider) {
+    console.log(provider)
     provider.request({
       method: 'wallet_switchEthereumChain',
       params: [{ chainId: '0x1' }]
@@ -116,6 +114,7 @@ export const getProvider = async reconnect => {
     return provider
   } catch (e) {
     if (e.error && e.error.message.match(/Unsupported network/)) {
+      console.error(e.error)
       handleUnsupportedNetwork(e.provider)
       return
     }
@@ -128,7 +127,7 @@ export const getProvider = async reconnect => {
       enforceReadOnly: true,
       enforceReload: false
     })
-    provider = providerObject
+    let provider = providerObject
     return provider
   } catch (e) {
     console.error('getProvider readOnly error: ', e)
@@ -148,6 +147,7 @@ export const setWeb3Provider = async provider => {
 
   provider?.on('chainChanged', async _chainId => {
     const networkId = await getNetworkId()
+    console.log({ networkId })
     if (!isSupportedNetwork(networkId)) {
       handleUnsupportedNetwork(provider)
       return
@@ -179,6 +179,7 @@ export default async reconnect => {
     if (!provider) throw 'Please install a wallet'
 
     const networkId = await getNetworkId()
+    console.log({ networkId })
 
     if (!isSupportedNetwork(networkId)) {
       handleUnsupportedNetwork(provider)

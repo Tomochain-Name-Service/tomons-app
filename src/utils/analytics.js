@@ -1,10 +1,11 @@
 import ReactGA from 'react-ga'
 import ReactGA4 from 'react-ga4'
-import { getNetworkId } from '@ensdomains/ui'
+import { getNetworkId } from '@tomochain-name-service/ui'
 
+// TODO: setup analytics for tomo
 const TrackingID = {
-  live: 'UA-138903307-1',
-  dev: 'UA-138903307-2'
+  live: 'UA-138903307-0',
+  dev: 'UA-138903307-0'
 }
 
 const V4TrackingID = 'G-0R0K339MK5'

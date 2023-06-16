@@ -1,4 +1,8 @@
-import { getNetwork, getNetworkId, isReadOnly } from '@ensdomains/ui'
+import {
+  getNetwork,
+  getNetworkId,
+  isReadOnly
+} from '@tomochain-name-service/ui'
 import { setup as setupENS } from '../apollo/mutations/ens'
 import {
   isReadOnlyReactive,
@@ -20,7 +24,7 @@ const option = {
       packageFactory: true,
       options: {
         rpc: {
-          1: rpcUrl
+          89: rpcUrl
         }
       }
     },

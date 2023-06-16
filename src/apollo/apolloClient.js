@@ -21,11 +21,10 @@ const cache = new InMemoryCache({
   typePolicies
 })
 
+// TODO: add tomo mainnet
 const endpoints = {
-  '1': 'https://api.thegraph.com/subgraphs/name/ensdomains/ens',
-  '3': 'https://api.thegraph.com/subgraphs/name/ensdomains/ensropsten',
-  '4': 'https://api.thegraph.com/subgraphs/name/ensdomains/ensrinkeby',
-  '5': 'https://api.thegraph.com/subgraphs/name/ensdomains/ensgoerli'
+  '89':
+    'https://graph.toumas.work/subgraphs/name/Tomochain-Name-Service/tomons-subgraph'
 }
 
 function getGraphQLAPI() {
@@ -39,7 +38,7 @@ function getGraphQLAPI() {
     return endpoints[network]
   }
 
-  return endpoints['1']
+  return endpoints['89']
 }
 
 function fromPromise(promise, operation) {

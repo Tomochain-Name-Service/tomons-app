@@ -3,7 +3,7 @@ import styled from '@emotion/styled/macro'
 import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { getNamehash } from '@ensdomains/ui'
+import { getNamehash } from '@tomochain-name-service/ui'
 import { GET_NAME_WRAPPER_DATA } from 'graphql/queries'
 import { useMediaMin } from 'mediaQuery'
 import { EMPTY_ADDRESS } from '../../utils/records'

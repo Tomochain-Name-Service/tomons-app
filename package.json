@@ -15,12 +15,12 @@
     "@ensdomains/eth-ens-namehash": "^2.0.15",
     "@ensdomains/mock": "^2.1.51",
     "@ensdomains/offchain-resolver-contracts": "^0.2.1",
-    "@ensdomains/react-ens-address": "^0.0.31",
-    "@ensdomains/ui": "^3.4.5",
     "@ensdomains/web3modal": "1.9.4",
     "@gnosis.pm/safe-apps-provider": "^0.9.2",
     "@myetherwallet/mewconnect-web-client": "^2.2.0-beta.16",
     "@portis/web3": "^2.0.0-beta.59",
+    "@tomochain-name-service/react-ens-address": "^0.0.35",
+    "@tomochain-name-service/ui": "^3.4.11",
     "@toruslabs/torus-embed": "^1.8.6",
     "@walletconnect/ethereum-provider": "^1.8.0-rc.0",
     "assert": "npm:assert",
@@ -173,7 +173,7 @@
     "resetMocks": false
   },
   "resolutions": {
-    "@ensdomains/ui": "^3.3.23",
+    "@tomochain-name-service/ui": "^3.4.11",
     "ethers": "^5.6.2",
     "wrtc": "npm:@koush/wrtc"
   }

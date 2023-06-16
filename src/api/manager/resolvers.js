@@ -13,7 +13,7 @@ import {
   isDecrypted,
   labelhash,
   utils
-} from '@ensdomains/ui'
+} from '@tomochain-name-service/ui'
 import getENS, { getRegistrar } from 'apollo/mutations/ens'
 import COIN_LIST_KEYS from 'constants/coinList'
 import TEXT_RECORD_KEYS from 'constants/textRecords'
@@ -255,10 +255,8 @@ async function setDNSSECTldOwner(ens, tld, networkId) {
   let tldowner = (await ens.getOwner(tld)).toLocaleLowerCase()
   if (parseInt(tldowner) !== 0) return tldowner
   switch (networkId) {
-    case 1:
+    case 89:
       return MAINNET_DNSREGISTRAR_ADDRESS
-    case 3:
-      return ROPSTEN_DNSREGISTRAR_ADDRESS
     default:
       return emptyAddress
   }
@@ -646,8 +644,7 @@ const resolvers = {
     },
     getNameWrapperData: async (_, { node }) => {
       const NAMEWRAPPER_ADDRESS_MAP = {
-        1: '0xD4416b13d2b3a9aBae7AcD5D6C2BbDBE25686401',
-        5: '0x114D4603199df73e7D157787f8778E21fCd13066'
+        89: '0x620C0634cdEAdbC2A9B432dAe9EfeF21d05971a4'
       }
       const provider = await getProvider()
       const networkId = await getNetworkId()

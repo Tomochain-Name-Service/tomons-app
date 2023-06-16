@@ -3,7 +3,7 @@ import {
   isEncodedLabelhash,
   decodeLabelhash,
   encodeLabelhash
-} from '@ensdomains/ui'
+} from '@tomochain-name-service/ui'
 
 function getLabels() {
   return JSON.parse(localStorage.getItem('labels')) || {}
