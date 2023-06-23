@@ -20,7 +20,7 @@
     "@myetherwallet/mewconnect-web-client": "^2.2.0-beta.16",
     "@portis/web3": "^2.0.0-beta.59",
     "@tomochain-name-service/react-ens-address": "^0.0.35",
-    "@tomochain-name-service/ui": "^3.4.11",
+    "@tomochain-name-service/ui": "^3.4.26",
     "@toruslabs/torus-embed": "^1.8.6",
     "@walletconnect/ethereum-provider": "^1.8.0-rc.0",
     "assert": "npm:assert",
@@ -173,8 +173,8 @@
     "resetMocks": false
   },
   "resolutions": {
-    "@tomochain-name-service/ui": "^3.4.11",
-    "ethers": "^5.6.2",
+    "@tomochain-name-service/ui": "^3.4.23",
+    "@tomochain-name-service/ethers": "^5.6.4",
     "wrtc": "npm:@koush/wrtc"
   }
 }
