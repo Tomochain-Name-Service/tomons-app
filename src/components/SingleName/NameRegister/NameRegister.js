@@ -197,6 +197,7 @@ const NameRegister = ({
     setBlockCreatedAt(checkCommitment * 1000)
   }
   if (getBalance && getRentPrice) {
+    console.log('heeeeee')
     hasSufficientBalance = getBalance.gt(getRentPrice)
   }
   if (blockCreatedAt && !waitUntil) {

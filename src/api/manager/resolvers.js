@@ -88,7 +88,7 @@ export const handleSingleTransaction = async (
     let addressAsBytes
 
     // use 0x00... for ETH because an empty string throws
-    if (coinRecord.key === 'ETH' && coinRecord.value === '') {
+    if (coinRecord.key === 'TOMO' && coinRecord.value === '') {
       coinRecord.value = emptyAddress
     }
 
@@ -142,7 +142,7 @@ export const handleMultipleTransactions = async (
         const { decoder, coinType } = formatsByName[record.key]
         let addressAsBytes
         // use 0x00... for ETH because an empty string throws
-        if (record.key === 'ETH' && record.value === '') {
+        if (record.key === 'TOMO' && record.value === '') {
           record.value = emptyAddress
         }
         if (!record.value || record.value === '') {
@@ -171,7 +171,7 @@ export const handleMultipleTransactions = async (
 async function getRegistrarEntry(name) {
   const registrar = getRegistrar()
   const nameArray = name.split('.')
-  if (nameArray.length > 3 || nameArray[1] !== 'eth') {
+  if (nameArray.length > 3 || nameArray[1] !== 'tomo') {
     return {}
   }
 
@@ -267,7 +267,7 @@ async function getDNSEntryDetails(name) {
   const registrar = getRegistrar()
   const nameArray = name.split('.')
   const networkId = await getNetworkId()
-  if (nameArray.length !== 2 || nameArray[1] === 'eth') return {}
+  if (nameArray.length !== 2 || nameArray[1] === 'tomo') return {}
 
   let tld = nameArray[1]
   let owner
@@ -308,7 +308,7 @@ function adjustForShortNames(node) {
   const { label, parent } = node
 
   // return original node if is subdomain or not eth
-  if (nameArray.length > 2 || parent !== 'eth' || label.length > 6) return node
+  if (nameArray.length > 2 || parent !== 'tomo' || label.length > 6) return node
 
   //if the auctions are over
   if (new Date() > new Date(1570924800000)) {

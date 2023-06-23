@@ -25,7 +25,7 @@ const BASIC_ADDRESS_REGEX = /^(0x)?[0-9a-f]{40}$/i
 const SAME_CASE_ADDRESS_REGEX = /^(0x)?([0-9a-f]{40}|[0-9A-F]{40})$/
 const ADDRESS_LENGTH = 40
 export const MAINNET_DNSREGISTRAR_ADDRESS =
-  '0x58774Bb8acD458A640aF0B88238369A167546ef2'
+  '0xe3496B176c9c4d1F585f8D0F8B6852B5b4C3C1DE'
 export const V3_MANAGER_URL = 'https://app.ens.domains'
 
 export const networkName = {
